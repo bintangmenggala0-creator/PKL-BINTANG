@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKL BINTANG MENGGALA 2026</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Plus+Jakarta+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Palette Terinspirasi Luxury Rolls-Royce Bespoke Showcase */
+            --bg-dark: #120a14;
+            --bg-card: #1c111e;
+            --bg-card-hover: #241627;
+            --accent-gold: #e6c8a5;
+            --accent-gold-muted: rgba(230, 200, 165, 0.4);
+            --border-gold: rgba(230, 200, 165, 0.15);
+            --text-light: #f5f3f7;
+            --text-muted: #b5a8b7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- KURSOR LINGKARAN EMAS TIPIS (HOLLOW) UNTUK KOMPUTER --- */
+@media (min-width: 769px) {
+    body {
+        /* Lingkaran emas tipis berdiameter 18px (bolong tengah) */
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="none" stroke="%23e6c8a5" stroke-width="1.5"/></svg>') 10 10, auto;
+    }
+
+    /* Saat Hover ke Tombol / Elemen Interaktif: Lingkaran Membesar & Garis Sedikit Lebih Tebal */
+    a, button, .card, .img-container, .audio-control, .lightbox-close {
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10" fill="none" stroke="%23e6c8a5" stroke-width="2"/></svg>') 13 13, pointer !important;
+    }
+}
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 300;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 0%, #261329 0%, var(--bg-dark) 70%);
+        }
+
+        /* --- CONTROLLER AUDIO MELAYANG (TOMBOL MUTE/UNMUTE) --- */
+        .audio-control {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            background: rgba(28, 17, 30, 0.85);
+            border: 1px solid var(--border-gold);
+            color: var(--accent-gold);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .audio-control:hover {
+            border-color: var(--accent-gold);
+            background: var(--bg-card-hover);
+            transform: translateY(-3px);
+        }
+
+        .music-wave {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .music-playing .music-wave {
+            animation: pulse 1.2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.4); opacity: 1; }
+        }
+
+        /* --- INTRO SCREEN (LUXURY BESPOKE STYLE) --- */
+        #intro-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #0c060d;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: opacity 1s ease, visibility 1s ease;
+            pointer-events: auto;
+        }
+
+        #intro-screen.fade-out {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .intro-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: 2.3rem;
+            letter-spacing: 8px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            background: linear-gradient(180deg, #ffffff 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro-subtitle {
+            font-size: 0.8rem;
+            letter-spacing: 6px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: 0.85;
+        }
+
+        .btn-enter {
+            background: transparent;
+            border: 1px solid var(--accent-gold-muted);
+            color: var(--text-light);
+            padding: 14px 40px;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: all 0.5s ease;
+            outline: none;
+            font-weight: 300;
+        }
+
+        .btn-enter:hover {
+            border-color: var(--accent-gold);
+            background: rgba(230, 200, 165, 0.08);
+            letter-spacing: 5px;
+        }
+
+        /* --- LAYOUT UTAMA --- */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 100px 0 50px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: 2.4rem;
+            letter-spacing: 6px;
+            color: #ffffff;
+        }
+
+        header p {
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            margin-top: 14px;
+            text-transform: uppercase;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Section Profile */
+        .profile-section {
+            padding: 70px 0;
+        }
+
+        .profile-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 4px;
+            padding: 48px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+
+        .profile-card h2 {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-size: 1.35rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .profile-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            font-weight: 300;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-gold);
+            text-align: center;
+        }
+
+        .info-item h4 {
+            color: var(--accent-gold);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            margin-bottom: 6px;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        .info-item p {
+            color: #ffffff;
+            font-weight: 300;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 30px 0 100px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 60px;
+            letter-spacing: 5px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 35px;
+            align-items: stretch;
+        }
+
+        /* --- ANIMASI POP UP --- */
+        .reveal-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-card.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.4s ease, background-color 0.4s ease, transform 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(230, 200, 165, 0.4);
+            background-color: var(--bg-card-hover);
+        }
+
+        .img-container, .video-container {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            position: relative;
+            background: #000;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.7s ease, opacity 0.5s ease;
+            opacity: 0.9;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            outline: none;
+        }
+
+        .card:hover .img-container img {
+            transform: scale(1.03);
+            opacity: 1;
+        }
+
+        .card-content {
+            padding: 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            border-top: 1px solid var(--border-gold);
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            font-weight: 400;
+            margin-bottom: 10px;
+            display: block;
+            opacity: 0.85;
+        }
+
+        .card-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: 1.15rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* --- LIGHTBOX / POP-UP FOTO STYLING --- */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(12, 6, 13, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            padding: 20px;
+        }
+
+        .lightbox-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-container {
+            max-width: 90%;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border: 1px solid var(--accent-gold-muted);
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            border-radius: 4px;
+        }
+
+        .lightbox-caption {
+            margin-top: 20px;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .lightbox-caption h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .lightbox-caption p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            color: var(--accent-gold);
+            font-size: 2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            border-top: 1px solid var(--border-gold);
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        .footer-progress {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .intro-title { font-size: 1.6rem; letter-spacing: 4px; }
+            .profile-card { padding: 30px 24px; }
+            .lightbox-img { max-height: 60vh; }
+        }
+        /* Container Video Custom */
+.video-container {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    cursor: pointer; /* Supaya kursor berubah jadi pointer/lingkaran emas saat di atas video */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    outline: none;
+}
+
+/* Tombol Play Custom Emas */
+.custom-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(28, 17, 30, 0.75);
+    border: 1px solid var(--accent-gold);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+    pointer-events: none; /* PENTING: Klik langsung tembus ke video */
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 15px solid var(--accent-gold);
+    margin-left: 3px;
+}
+
+/* Bentuk Segitiga Play (Emas) */
+.play-icon {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid var(--accent-gold);
+    margin-left: 4px; /* Menyeimbangkan posisi segitiga */
+}
+
+/* Hover Effect pada Tombol Play */
+.video-container:hover .custom-play-btn {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(230, 200, 165, 0.2);
+}
+
+/* Sembunyikan tombol play saat video sedang berjalan */
+.video-container.playing .custom-play-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.profile-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-weight: 300;
+            text-align: center;
+            max-width: 800px; /* Diperketat sedikit agar baris kalimat tidak terlalu panjang */
+            margin: 0 auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 35px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-gold);
+            text-align: center;
+            align-items: start;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ELEMENT AUDIO BACKGROUND (Smooth Operator) -->
+    <audio id="bg-music" loop>
+        <source src="bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- TOMBOL KONTROL MUSIK MELAYANG -->
+    <button id="audio-toggle" class="audio-control">
+        <span class="music-wave"></span>
+        <span id="audio-text">Audio: On</span>
+    </button>
+
+    <!-- INTRO OVERLAY -->
+    <div id="intro-screen">
+        <h1 class="intro-title">Bintang Menggala</h1>
+        <p class="intro-subtitle">PKL Documentation 2026</p>
+        <button id="btn-enter" class="btn-enter">Jelajahi Dokumentasi</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <header>
+        <div class="container">
+            <h1>PKL BINTANG MENGGALA 2026</h1>
+            <p>PLN ICON PLUS - KP. LAMPUNG</p>
+        </div>
+    </header>
+
+    <main class="container">
+<!-- DESKRIPSI AWAL -->
+        <section class="profile-section">
+            <div class="profile-card">
+                <h2>Profil & Latar Belakang</h2>
+                <p>
+                    Saya, <strong>Bintang Menggala</strong>, siswa kelas IX SMKN 7 Bandarlampung konsentrasi keahlian Teknik Komputer & Jaringan. Melaksanakan Praktik Kerja Lapangan tahun ajaran 2026/2027 pada tanggal 6 Juli hingga 24 Desember 2026 di PT Indonesia Comnets Plus (Icon Plus) yang berlokasi di Jl. Gn. Rajabasa Raya No.16, Perumnas Way Halim, Kec. Way Halim, Kota Bandar Lampung, Lampung 35132.
+                </p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>Perusahaan ISP</h4>
+                        <p>PT Indonesia Comnets Plus (Icon Plus)</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Pelaksanaan</h4>
+                        <p>6 Juli – 24 Desember 2026</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Konsentrasi Keahlian</h4>
+                        <p>Teknik Komputer & Jaringan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION TUJUAN & MANFAAT PKL -->
+        <section class="purpose-section" style="padding: 0 0 70px;">
+            <div class="purpose-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                
+                <!-- Kartu Tujuan -->
+                <div class="profile-card" style="text-align: left; padding: 40px 35px;">
+                    <h2>Tujuan Pelaksanaan PKL</h2>
+                    <ol style="color: var(--text-light); font-size: 0.9rem; line-height: 1.8; font-weight: 300; padding-left: 20px;">
+                        <li style="margin-bottom: 12px; padding-left: 8px;">
+                            Memberikan pengalaman kerja langsung, sekaligus sebagai sarana meningkatkan ilmu yang sudah diperoleh di sekolah.
+                        </li>
+                        <li style="padding-left: 8px;">
+                            Sebagai sarana pengembangan karakter peserta didik sesuai dengan nilai-nilai baik di masyarakat maupun di bidang kerja yang ditekuni.
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Kartu Manfaat -->
+                <div class="profile-card" style="text-align: left; padding: 40px 35px;">
+                    <h2>Manfaat Pelaksanaan PKL</h2>
+                    <ol style="color: var(--text-light); font-size: 0.9rem; line-height: 1.8; font-weight: 300; padding-left: 20px;">
+                        <li style="margin-bottom: 12px; padding-left: 8px;">
+                            Meningkatkan serta menerapkan pengetahuan yang sudah diperoleh di sekolah.
+                        </li>
+                        <li style="padding-left: 8px;">
+                            Memperoleh wawasan lebih luas mengenai dunia kerja.
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+</section>
+        <!-- DOKUMENTASI FOTO & VIDEO -->
+        <section class="gallery-section">
+            <h2 class="section-title">Dokumentasi Kegiatan</h2>
+            <div class="gallery-grid">
+
+                <!-- VIDEO 1 -->
+                <div class="card reveal-card">
+                    <div class="video-container">
+                        <video muted playsinline preload="metadata">
+                            <source src="olt%20marga%20pundu.mp4#t=0.1" type="video/mp4">
+                        </video>
+                        <div class="custom-play-btn">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Video Dokumentasi</span>
+                        <h3 class="card-title">Video OLT Marga Pundu</h3>
+                        <p class="card-desc">Dokumentasi video proses penanganan perangkat OLT di site Marga Pundu.</p>
+                    </div>
+                </div>
+
+                <!-- VIDEO 2 -->
+                <div class="card reveal-card">
+                    <div class="video-container">
+                        <video muted playsinline preload="metadata">
+                            <source src="oltmetro.mp4#t=0.1" type="video/mp4">
+                        </video>
+                        <div class="custom-play-btn">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Video Dokumentasi</span>
+                        <h3 class="card-title">Video OLT Metro</h3>
+                        <p class="card-desc">Rekaman kegiatan pemeriksaan dan pembersihan OLT Metro.</p>
+                    </div>
+                </div>
+                
+
+                <!-- FOTO 1 -->
+                <div class="card reveal-card">
+                    <div class="img-container">
+                        <img src="Foto1oltmargapundu.jpg" alt="OLT Margapundu">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Infrastruktur</span>
+                        <h3 class="card-title">OLT Margapundu</h3>
+                        <p class="card-desc">Pemeriksaan dan maintenance perangkat Optical Line Terminal di site Margapundu untuk memastikan kestabilan koneksi serat optik.</p>
+                    </div>
+                </div>
+
+
+                <!-- FOTO 2 -->
+                <div class="card reveal-card">
+                    <div class="img-container">
+                        <img src="Foto2oltmetro.jpg" alt="OLT Metro">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Infrastruktur</span>
+                        <h3 class="card-title">OLT Metro</h3>
+                        <p class="card-desc">Pemeriksaan dan pemeliharaan perangkat OLT di site metro.</p>
+                    </div>
+                </div>
+
+                <!-- FOTO 3 -->
+                <div class="card reveal-card">
+                    <div class="img-container">
+                        <img src="Foto3fatrajabasa.jpg" alt="FAT Rajabasa">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Jaringan Lapangan</span>
+                        <h3 class="card-title">FAT Rajabasa</h3>
+                        <p class="card-desc">Pengecekan serta penataan Optical Distribution Point atau Fiber Access Terminal (FAT) di wilayah Rajabasa.</p>
+                    </div>
+                </div>
+
+                <!-- FOTO 4 -->
+                <div class="card reveal-card">
+                    <div class="img-container">
+                        <img src="Canvasing1.jpg" alt="Canvasing Part 1">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Kegiatan Lapangan</span>
+                        <h3 class="card-title">Canvasing Part 1</h3>
+                        <p class="card-desc">Kegiatan canvasing dan sosialisasi produk Icon plus.</p>
+                    </div>
+                </div>
+
+                <!-- FOTO 5 -->
+                <div class="card reveal-card">
+                    <div class="img-container">
+                        <img src="Canvasing2.jpg" alt="Canvasing Part 2">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Kegiatan Lapangan</span>
+                        <h3 class="card-title">Canvasing Part 2</h3>
+                        <p class="card-desc">Kegiatan canvasing di area yang telah di tentukan.</p>
+                    </div>
+                </div>
+
+                <!-- FOTO 6 -->
+                <div class="card reveal-card">
+                    <div class="img-container">
+                        <img src="Canvasing3.jpg" alt="Canvasing Part 3">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Kegiatan Lapangan</span>
+                        <h3 class="card-title">Canvasing Part 3</h3>
+                        <p class="card-desc">Salah satu lokasi FAT yang menjadi tempat canvasing.</p>
+                    </div>
+                </div>
+
+                <!-- FOTO 7 -->
+                <div class="card reveal-card">
+                    <div class="img-container">
+                        <img src="Canvasing4.jpg" alt="Canvasing Part 4">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Kegiatan Lapangan</span>
+                        <h3 class="card-title">Canvasing Part 4</h3>
+                        <p class="card-desc">Canvasing di area antasari-kedamaian.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- LIGHTBOX OVERLAY ELEMENT -->
+    <div id="lightbox" class="lightbox-overlay">
+        <div class="lightbox-container">
+            <span id="lightbox-close" class="lightbox-close">&times;</span>
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Fullscreen Image">
+            <div class="lightbox-caption">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-progress">Progress masih berjalan hingga 24/12/2026</p>
+        <p>2026 Bintang Menggala - SMKN 7. </p>
+    </footer>
+
+   <!-- SCRIPT INTERAKSI, LIGHTBOX & AUDIO -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 1. Deklarasi Elemen Utama
+            const introScreen = document.getElementById("intro-screen");
+            const btnEnter = document.getElementById("btn-enter");
+            const reveals = document.querySelectorAll(".reveal-card");
+
+            // 2. Audio Elements
+            const bgMusic = document.getElementById("bg-music");
+            const audioToggle = document.getElementById("audio-toggle");
+            const audioText = document.getElementById("audio-text");
+            let isPlaying = false;
+
+            bgMusic.volume = 0.4;
+
+            // 3. Handler Tombol Masuk / Intro
+            btnEnter.addEventListener("click", function () {
+                introScreen.classList.add("fade-out");
+                bgMusic.currentTime = 73.7;
+
+                bgMusic.play().then(() => {
+                    isPlaying = true;
+                    audioToggle.classList.add("music-playing");
+                    audioText.textContent = "Audio: On";
+                }).catch(err => {
+                    console.log("Auto-play tercegah oleh browser:", err);
+                });
+
+                setTimeout(revealOnScroll, 300);
+            });
+
+            // 4. Toggle Audio (Mute / Unmute)
+            audioToggle.addEventListener("click", function () {
+                if (isPlaying) {
+                    bgMusic.pause();
+                    isPlaying = false;
+                    audioToggle.classList.remove("music-playing");
+                    audioText.textContent = "Audio: Off";
+                } else {
+                    if (bgMusic.currentTime === 0) bgMusic.currentTime = 73.7;
+                    bgMusic.play();
+                    isPlaying = true;
+                    audioToggle.classList.add("music-playing");
+                    audioText.textContent = "Audio: On";
+                }
+            });
+
+            // 5. Handler Play / Pause Video
+            const videoContainers = document.querySelectorAll('.video-container');
+
+            videoContainers.forEach(container => {
+                const video = container.querySelector('video');
+                if (!video) return;
+
+                video.muted = true;
+
+                container.addEventListener('click', function () {
+                    if (video.paused) {
+                        document.querySelectorAll('video').forEach(v => {
+                            v.pause();
+                            if (v.parentElement) {
+                                v.parentElement.classList.remove('playing');
+                            }
+                        });
+
+                        video.play().then(() => {
+                            container.classList.add('playing');
+                        }).catch(err => {
+                            console.error("Gagal memutar video:", err);
+                        });
+                    } else {
+                        video.pause();
+                        container.classList.remove('playing');
+                    }
+                });
+
+                video.addEventListener('ended', function () {
+                    container.classList.remove('playing');
+                });
+            });
+
+            // 6. Lightbox Pop-Up Logic
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const lightboxTitle = document.getElementById("lightbox-title");
+            const lightboxDesc = document.getElementById("lightbox-desc");
+            const lightboxClose = document.getElementById("lightbox-close");
+            const imageCards = document.querySelectorAll(".img-container");
+
+            imageCards.forEach(container => {
+                container.addEventListener("click", function () {
+                    const img = this.querySelector("img");
+                    const cardContent = this.nextElementSibling;
+                    const title = cardContent.querySelector(".card-title").innerText;
+                    const desc = cardContent.querySelector(".card-desc").innerText;
+
+                    lightboxImg.src = img.src;
+                    lightboxTitle.innerText = title;
+                    lightboxDesc.innerText = desc;
+
+                    lightbox.classList.add("active");
+                });
+            });
+
+            lightboxClose.addEventListener("click", () => lightbox.classList.remove("active"));
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) lightbox.classList.remove("active");
+            });
+
+            // 7. Animasi Scroll (Reveal on Scroll)
+            function revealOnScroll() {
+                const windowHeight = window.innerHeight;
+                reveals.forEach(card => {
+                    const cardTop = card.getBoundingClientRect().top;
+                    if (cardTop < windowHeight - 60) {
+                        card.classList.add("active");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll(); // Jalankan sekali di awal untuk memuat kartu yang sudah terlihat 
+        });
+
+        // Tambahkan di dalam skrip JS Anda:
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+        lightbox.classList.remove("active");
+    }
+});
+
+// Efek Tilt Sederhana
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        card.style.transform = `perspective(1000px) rotateX(${-y / 20}deg) rotateY(${x / 20}deg) scale(1.02)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+});
+    </script>
+</body>
+</html>
