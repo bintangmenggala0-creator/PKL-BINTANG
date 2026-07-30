@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurnal Harian PKL - Bintang Menggala</title>
+
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jurnal Harian PKL - Bintang Menggala">
+    <meta property="og:description" content="Catatan kegiatan & pembelajaran harian Praktik Kerja Lapangan di PT Icon Plus KP. Lampung.">
+    <meta property="og:image" content="https://res.cloudinary.com/buklippb/image/upload/v1785399468/Foto1oltmargapundu_vfq7pv.jpg">
+    <meta property="og:url" content="https://bintangmenggala0-creator.github.io/PKL-BINTANG/jurnal.html">
+    <meta property="og:site_name" content="PKL Bintang Menggala 2026">
+    <meta property="og:locale" content="id_ID">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jurnal Harian PKL - Bintang Menggala">
+    <meta name="twitter:description" content="Catatan kegiatan & pembelajaran harian Praktik Kerja Lapangan di PT Icon Plus KP. Lampung.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/buklippb/image/upload/v1785399468/Foto1oltmargapundu_vfq7pv.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Plus+Jakarta+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #120a14;
+            --bg-card: #1c111e;
+            --bg-card-hover: #241627;
+            --accent-gold: #e6c8a5;
+            --accent-gold-muted: rgba(230, 200, 165, 0.4);
+            --border-gold: rgba(230, 200, 165, 0.15);
+            --text-light: #f5f3f7;
+            --text-muted: #b5a8b7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 769px) {
+            body {
+                cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="none" stroke="%23e6c8a5" stroke-width="1.5"/></svg>') 10 10, auto;
+            }
+            a, button, select, .btn-back, .jurnal-card {
+                cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10" fill="none" stroke="%23e6c8a5" stroke-width="2"/></svg>') 13 13, pointer !important;
+            }
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 300;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 0%, #261329 0%, var(--bg-dark) 70%);
+            padding-bottom: 60px;
+        }
+
+        /* --- CONTROLLER AUDIO MELAYANG --- */
+        .audio-control {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            background: rgba(28, 17, 30, 0.85);
+            border: 1px solid var(--border-gold);
+            color: var(--accent-gold);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .audio-control:hover {
+            border-color: var(--accent-gold);
+            background: var(--bg-card-hover);
+            transform: translateY(-3px);
+        }
+
+        #audio-toggle-btn {
+            background: none;
+            border: none;
+            color: inherit;
+            font: inherit;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+        .audio-select {
+            background: transparent;
+            border: none;
+            border-left: 1px solid var(--border-gold);
+            color: var(--accent-gold);
+            font-family: inherit;
+            font-size: 0.75rem;
+            padding: 2px 5px 2px 8px;
+            outline: none;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            width: 20px;
+            cursor: pointer;
+        }
+
+        .audio-select option {
+            background-color: var(--bg-card);
+            color: var(--text-light);
+            text-transform: none;
+        }
+
+        .music-wave {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .music-playing .music-wave {
+            animation: pulse 1.2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.4); opacity: 1; }
+        }
+
+        /* --- LAYOUT UTAMA --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 80px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-gold);
+            position: relative;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-gold);
+            border: 1px solid var(--border-gold);
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            background: rgba(28, 17, 30, 0.6);
+            margin-bottom: 30px;
+        }
+
+        .btn-back:hover {
+            border-color: var(--accent-gold);
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            transform: translateY(-2px);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: 2.2rem;
+            letter-spacing: 5px;
+            color: #ffffff;
+        }
+
+        header p {
+            color: var(--accent-gold);
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        /* --- TIMELINE JURNAL HARIAN --- */
+        .jurnal-section {
+            padding: 50px 0;
+        }
+
+        .jurnal-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .jurnal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 4px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .jurnal-card:hover {
+            border-color: rgba(230, 200, 165, 0.4);
+            background: var(--bg-card-hover);
+            transform: translateX(5px);
+        }
+
+        .jurnal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-gold);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .jurnal-date {
+            font-family: 'Cinzel', serif;
+            font-size: 1.05rem;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        .jurnal-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 4px 12px;
+            border: 1px solid var(--accent-gold-muted);
+            border-radius: 20px;
+            color: var(--text-light);
+            background: rgba(230, 200, 165, 0.05);
+        }
+
+        .jurnal-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .jurnal-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-gold);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.7rem; }
+            .jurnal-card { padding: 20px; }
+            .jurnal-header { flex-direction: column; align-items: flex-start; }
+            .audio-control {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px 14px;
+                font-size: 0.68rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- AUDIO ELEMENT -->
+    <audio id="bg-music">
+        <source id="bg-music-source" src="bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- TOMBOL AUDIO MELAYANG -->
+    <div id="audio-toggle" class="audio-control">
+        <button id="audio-toggle-btn" title="Play/Pause">
+            <span class="music-wave"></span>
+            <span id="audio-text">Audio: On</span>
+        </button>
+        <select id="audio-select-song" class="audio-select" title="Pilih Lagu">
+            <option value="" disabled selected hidden></option>
+            <option value="0">Smooth Operator - Sade</option>
+            <option value="1">Like a Tattoo - Sade</option>
+            <option value="2">Aku Cinta Padamu - Siti Nurhaliza</option>
+        </select>
+    </div>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="btn-back">← Kembali ke Utama</a>
+            <h1>JURNAL HARIAN PKL</h1>
+            <p>Catatan Kegiatan & Pembelajaran di PT Icon Plus</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="jurnal-section">
+            <div class="jurnal-grid" id="jurnal-grid">
+                <p style="color: var(--text-muted); text-align:center; letter-spacing: 1px;">Memuat data jurnal...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2026 Bintang Menggala - SMKN 7 Bandarlampung</p>
+    </footer>
+
+    <script>
+        const JURNAL_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR92Cjb0EKmxAv7-FeQIhj9V43EwxxDPLtsNsMHSN_ipaYJgtIPtArz_BSEtHxSP7Y37Lruaab_vuN2/pub?output=csv";
+
+        function parseCSV(text) {
+            const rows = [];
+            let row = [];
+            let field = "";
+            let inQuotes = false;
+
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const next = text[i + 1];
+
+                if (inQuotes) {
+                    if (char === '"' && next === '"') {
+                        field += '"';
+                        i++;
+                    } else if (char === '"') {
+                        inQuotes = false;
+                    } else {
+                        field += char;
+                    }
+                } else {
+                    if (char === '"') {
+                        inQuotes = true;
+                    } else if (char === ',') {
+                        row.push(field);
+                        field = "";
+                    } else if (char === '\r') {
+                        // dilewati
+                    } else if (char === '\n') {
+                        row.push(field);
+                        rows.push(row);
+                        row = [];
+                        field = "";
+                    } else {
+                        field += char;
+                    }
+                }
+            }
+            if (field.length > 0 || row.length > 0) {
+                row.push(field);
+                rows.push(row);
+            }
+            return rows.filter(r => r.some(cell => cell.trim() !== ""));
+        }
+
+        function escapeHTML(str) {
+            const div = document.createElement("div");
+            div.textContent = str || "";
+            return div.innerHTML;
+        }
+
+        async function loadJurnal() {
+            const grid = document.getElementById("jurnal-grid");
+            try {
+                const res = await fetch(JURNAL_CSV_URL, { cache: "no-store" });
+                if (!res.ok) throw new Error("Gagal mengambil data (status " + res.status + ")");
+                const csvText = await res.text();
+                const rows = parseCSV(csvText);
+
+                let headerIndex = rows.findIndex(r => r.some(cell => cell.trim().toLowerCase() === "tanggal"));
+                if (headerIndex === -1) headerIndex = 0;
+
+                const header = rows[headerIndex].map(h => h.trim().toLowerCase());
+                const idxNo = header.findIndex(h => h === "no");
+                const idxTanggal = header.findIndex(h => h.includes("tanggal"));
+                const idxJudul = header.findIndex(h => h.includes("judul"));
+                const idxKeterangan = header.findIndex(h => h.includes("keterangan") || h.includes("rincian"));
+
+                const dataRows = rows.slice(headerIndex + 1).filter(r => (r[idxTanggal] || "").trim() !== "");
+
+                if (dataRows.length === 0) {
+                    grid.innerHTML = '<p style="color: var(--text-muted); text-align:center;">Belum ada data jurnal.</p>';
+                    return;
+                }
+
+                grid.innerHTML = dataRows.map(r => {
+                    const no = idxNo !== -1 ? r[idxNo] : "";
+                    const tanggal = idxTanggal !== -1 ? r[idxTanggal] : "";
+                    const judul = idxJudul !== -1 ? r[idxJudul] : "";
+                    const keterangan = idxKeterangan !== -1 ? r[idxKeterangan] : "";
+
+                    return `
+                <div class="jurnal-card">
+                    <div class="jurnal-header">
+                        <span class="jurnal-date">${escapeHTML(tanggal)}</span>
+                        <span class="jurnal-badge">${no ? "Kegiatan Ke-" + escapeHTML(no) : ""}</span>
+                    </div>
+                    <h3 class="jurnal-title">${escapeHTML(judul)}</h3>
+                    <p class="jurnal-desc">${escapeHTML(keterangan)}</p>
+                </div>`;
+                }).join("");
+            } catch (err) {
+                console.error("Gagal memuat jurnal:", err);
+                grid.innerHTML = '<p style="color: var(--text-muted); text-align:center;">Gagal memuat data jurnal. Silakan coba lagi nanti.</p>';
+            }
+        }
+
+        loadJurnal();
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const bgMusic = document.getElementById("bg-music");
+            const bgMusicSource = document.getElementById("bg-music-source");
+            const audioToggle = document.getElementById("audio-toggle");
+            const audioToggleBtn = document.getElementById("audio-toggle-btn");
+            const audioSelectSong = document.getElementById("audio-select-song");
+            const audioText = document.getElementById("audio-text");
+            let isPlaying = false;
+
+            const tracks = ["bg-music.mp3", "bg-music-2.mp3", "bg-music-3.mp3"];
+            
+            let trackIndex = parseInt(localStorage.getItem("audioTrack"), 10);
+            if (isNaN(trackIndex) || trackIndex < 0 || trackIndex >= tracks.length) {
+                trackIndex = 0;
+            }
+
+            bgMusicSource.src = tracks[trackIndex];
+            bgMusic.load();
+            bgMusic.volume = 0.4;
+
+            const savedTime = localStorage.getItem('audioTime');
+            const wasPlaying = localStorage.getItem('audioPlaying');
+
+            if (savedTime) {
+                bgMusic.currentTime = parseFloat(savedTime);
+            }
+
+            if (wasPlaying === 'true') {
+                bgMusic.play().then(() => {
+                    isPlaying = true;
+                    audioToggle.classList.add("music-playing");
+                    audioText.textContent = "Audio: On";
+                }).catch(err => {
+                    console.log("Autoplay terhalang oleh browser:", err);
+                });
+            } else {
+                isPlaying = false;
+                audioToggle.classList.remove("music-playing");
+                audioText.textContent = "Audio: Off";
+            }
+
+            bgMusic.addEventListener('timeupdate', () => {
+                localStorage.setItem('audioTime', bgMusic.currentTime);
+                localStorage.setItem('audioPlaying', isPlaying);
+            });
+
+            bgMusic.addEventListener('ended', function () {
+                bgMusic.currentTime = 0;
+                bgMusic.play();
+            });
+
+            audioToggleBtn.addEventListener("click", function () {
+                if (isPlaying) {
+                    bgMusic.pause();
+                    isPlaying = false;
+                    audioToggle.classList.remove("music-playing");
+                    audioText.textContent = "Audio: Off";
+                } else {
+                    bgMusic.play();
+                    isPlaying = true;
+                    audioToggle.classList.add("music-playing");
+                    audioText.textContent = "Audio: On";
+                }
+                localStorage.setItem('audioPlaying', isPlaying);
+            });
+
+            audioSelectSong.addEventListener("change", function () {
+                if (!this.value) return;
+                trackIndex = parseInt(this.value, 10);
+                bgMusicSource.src = tracks[trackIndex];
+                bgMusic.load();
+                bgMusic.currentTime = 0;
+
+                localStorage.setItem("audioTrack", trackIndex);
+                localStorage.setItem("audioTime", "0");
+
+                if (isPlaying) {
+                    bgMusic.play().catch(err => console.log("Auto-play blocked:", err));
+                }
+                this.value = ""; // Mengosongkan pilihan agar teks tetap tidak muncul di tombol
+            });
+        });
+    </script>
+</body>
+</html>
