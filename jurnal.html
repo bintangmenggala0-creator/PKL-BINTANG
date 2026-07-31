@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurnal Harian - PKL Bintang Menggala 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Plus+Jakarta+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- AUDIO & TOMBOL AUDIO DITAMBAHKAN DI SINI -->
+    <audio id="bg-music" preload="auto">
+        <source src="bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="audio-panel">
+        <button id="audio-toggle" class="audio-control" aria-label="Toggle Audio">
+            <span class="music-wave"></span>
+            <span id="audio-text">Audio: Off</span>
+        </button>
+        <select id="audio-select" class="audio-select" aria-label="Pilih Koleksi">
+            <option value="bg-music.mp3">Smooth Operator</option>
+            <option value="bg-music-2.mp3">Like A Tattoo</option>
+        </select>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>JURNAL HARIAN PKL</h1>
+            <p>Bintang Menggala - PT PLN Icon Plus KP. Lampung</p>
+            
+            <div class="header-nav">
+                <a href="index.html" class="btn-nav">🏠 KEMBALI KE UTAMA</a>
+                <a href="album.html" class="btn-nav">🖼️ LIHAT ALBUM DOKUMENTASI</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="gallery-section">
+            <h2 class="section-title">Catatan Kegiatan Harian</h2>
+
+            <div class="gallery-controls">
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Cari tanggal atau deskripsi kegiatan...">
+                </div>
+            </div>
+
+            <div class="jurnal-timeline" id="jurnal-grid">
+                <p class="jurnal-empty">Memuat jurnal...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-progress">Progress masih berjalan hingga 24/12/2026</p>
+        <p>2026 Bintang Menggala - SMKN 7.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

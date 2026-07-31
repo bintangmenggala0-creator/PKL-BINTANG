@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKL BINTANG MENGGALA 2026</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PKL Bintang Menggala 2026 - PT Icon Plus">
+    <meta property="og:description" content="Dokumentasi Praktik Kerja Lapangan Bintang Menggala di PT Indonesia Comnets Plus KP. Lampung.">
+    <meta property="og:image" content="https://res.cloudinary.com/buklippb/image/upload/v1785399468/Foto1oltmargapundu_vfq7pv.jpg">
+    <meta property="og:url" content="https://bintangmenggala0-creator.github.io/PKL-BINTANG/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Plus+Jakarta+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- LINK STYLESHEET TERPISAH -->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Kalau intro sudah pernah ditampilkan di sesi ini, tandai lebih dulu
+        // sebelum body dirender, supaya tidak ada kedipan layar intro.
+        if (sessionStorage.getItem("introShown") === "true") {
+            document.documentElement.classList.add("intro-done");
+        }
+    </script>
+</head>
+<body>
+
+    <audio id="bg-music" preload="auto">
+        <source src="bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="audio-panel">
+        <button id="audio-toggle" class="audio-control" aria-label="Toggle Audio">
+            <span class="music-wave"></span>
+            <span id="audio-text">Audio: On</span>
+        </button>
+        <select id="audio-select" class="audio-select" aria-label="Pilih Koleksi">
+            <option value="bg-music.mp3">Smooth Operator</option>
+            <option value="bg-music-2.mp3">Like A Tattoo</option>
+        </select>
+    </div>
+
+    <div id="intro-screen">
+        <h1 class="intro-title">Bintang Menggala</h1>
+        <p class="intro-subtitle">PKL Documentation 2026</p>
+        <button id="btn-enter" class="btn-enter">Jelajahi Dokumentasi</button>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>PKL BINTANG MENGGALA 2026</h1>
+            <p>PLN ICON PLUS - KP. LAMPUNG</p>
+            
+            <div class="header-nav">
+                <a href="jurnal.html" class="btn-nav">📖 LIHAT JURNAL HARIAN</a>
+                <a href="album.html" class="btn-nav">🖼️ LIHAT ALBUM DOKUMENTASI</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="profile-section">
+            <div class="profile-card">
+                <h2>Profil & Latar Belakang</h2>
+                <p>
+                    Saya, <strong>Bintang Menggala</strong>, siswa kelas IX SMKN 7 Bandarlampung konsentrasi keahlian Teknik Komputer & Jaringan. Melaksanakan Praktik Kerja Lapangan tahun ajaran 2026/2027 pada tanggal 6 Juli hingga 24 Desember 2026 di PT Indonesia Comnets Plus (Icon Plus) yang berlokasi di Jl. Gn. Rajabasa Raya No.16, Perumnas Way Halim, Kec. Way Halim, Kota Bandar Lampung, Lampung 35132.
+                </p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>Perusahaan ISP</h4>
+                        <p>PT Indonesia Comnets Plus (Icon Plus)</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Pelaksanaan</h4>
+                        <p>6 Juli – 24 Desember 2026</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Konsentrasi Keahlian</h4>
+                        <p>Teknik Komputer & Jaringan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="purpose-section">
+            <div class="purpose-container-vertical">
+                <div class="profile-card" style="text-align: left; padding: 40px 35px;">
+                    <h2>Tujuan Pelaksanaan PKL</h2>
+                    <ol style="color: var(--text-light); font-size: 0.9rem; line-height: 1.8; font-weight: 300; padding-left: 20px;">
+                        <li style="margin-bottom: 12px; padding-left: 8px;">Memberikan pengalaman kerja langsung, sekaligus sebagai sarana meningkatkan ilmu yang sudah diperoleh di sekolah.</li>
+                        <li style="padding-left: 8px;">Sebagai sarana pengembangan karakter peserta didik sesuai dengan nilai-nilai baik di masyarakat maupun di bidang kerja yang ditekuni.</li>
+                    </ol>
+                </div>
+
+                <div class="profile-card" style="text-align: left; padding: 40px 35px;">
+                    <h2>Manfaat Pelaksanaan PKL</h2>
+                    <ol style="color: var(--text-light); font-size: 0.9rem; line-height: 1.8; font-weight: 300; padding-left: 20px;">
+                        <li style="margin-bottom: 12px; padding-left: 8px;">Meningkatkan serta menerapkan pengetahuan yang sudah diperoleh di sekolah.</li>
+                        <li style="padding-left: 8px;">Memperoleh wawasan lebih luas mengenai dunia kerja.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 class="section-title">Dokumentasi Kegiatan</h2>
+
+            <div class="gallery-controls">
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Cari dokumentasi (misal: Metro, Canvasing)...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="Video Dokumentasi">Video Dokumentasi</button>
+                    <button class="filter-btn" data-filter="Jaringan Lapangan">Jaringan Lapangan</button>
+                </div>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid"></div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox-overlay">
+        <div class="lightbox-container">
+            <span id="lightbox-close" class="lightbox-close">&times;</span>
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Fullscreen Image">
+            <div class="lightbox-caption">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-progress">Progress masih berjalan hingga 24/12/2026</p>
+        <p>2026 Bintang Menggala - SMKN 7.</p>
+    </footer>
+
+    <!-- SCRIPT TERPISAH -->
+    <script src="data-album.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
