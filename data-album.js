@@ -39,21 +39,21 @@ const albumData = [
         type: "image",
         category: "Infrastruktur",
         title: "OLT Metro",
-        desc: "Pemeriksaan dan pemeliharaan perangkat OLT di site metro.",
+        desc: "Pemeriksaan dan pemeliharaan perangkat OLT di Area metro.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785399467/Foto2oltmetro_j9qgdm.jpg"
     },
     {
         type: "image",
         category: "Jaringan Lapangan",
         title: "FAT Rajabasa",
-        desc: "Pengecekan serta penataan Optical Distribution Point atau Fiber Access Terminal (FAT) di wilayah Rajabasa.",
+        desc: "Pengecekan serta penataan Fiber Access Terminal (FAT) di wilayah Rajabasa.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785399470/Foto3fatrajabasa_bijyoj.jpg"
     },
     {
         type: "image",
         category: "Jaringan Lapangan",
         title: "FAT Jagabaya II",
-        desc: "Pemeriksaan kondisi FAT dan pengukuran redaman kabel di area Jagabaya II.",
+        desc: "Pemeriksaan kondisi FAT di area Jagabaya II.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785399397/TimePhoto_20260728_114254_1_w7qnxh.jpg"
     },
     {
@@ -88,21 +88,21 @@ const albumData = [
         type: "image",
         category: "Kegiatan Lapangan",
         title: "Canvasing Part 2",
-        desc: "Kegiatan canvasing di area yang telah di tentukan.",
+        desc: "Kegiatan canvasing di area yang memiliki ultilisasi rendah.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785399467/canvasing2_ultyew.jpg"
     },
     {
         type: "image",
         category: "Kegiatan Lapangan",
         title: "Canvasing Part 3",
-        desc: "Salah satu lokasi FAT yang menjadi tempat canvasing.",
+        desc: "Salah satu lokasi FAT yang memiliki ultilisasi rendah sehingga menjadi salah satu titik canvasing.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785399468/canvasing3_y5h9iy.jpg"
     },
     {
         type: "image",
         category: "Kegiatan Lapangan",
         title: "Canvasing Part 4",
-        desc: "Canvasing di area antasari-kedamaian.",
+        desc: "Canvasing di area sekitar antasari-kedamaian.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785399468/canvasing4_ckvoy9.jpg"
     }
 ];
