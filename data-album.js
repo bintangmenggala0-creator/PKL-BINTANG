@@ -60,14 +60,14 @@ const albumData = [
         type: "image",
         category: "Jaringan Lapangan",
         title: "Rumija Jatiagung",
-        desc: "Survei dan peninjauan Ruang Milik Jalan (Rumija) di wilayah Jatiagung untuk jalur kabel fiber optik.",
+        desc: "Survei dan peninjauan Ruang Milik Jalan (Rumija) di wilayah Jatiagung untuk pendataan.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785479756/TimePhoto_20260731_095847_1_rob9yk.jpg"
     },
     {
         type: "image",
         category: "Jaringan Lapangan",
         title: "Pengukuran Rumija Jatiagung 1",
-        desc: "Proses pengukuran jalur Rumija di Jatiagung guna perencanaan pemasangan infrastruktur jaringan.",
+        desc: "Proses pengukuran jalur Rumija di Jatiagung untuk pendataan.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785479731/TimePhoto_20260731_100059_1_pczkvr.jpg"
     },
     {
