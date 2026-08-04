@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Dokumentasi - PKL Bintang Menggala 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Plus+Jakarta+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/min/base.min.css">
+    <link rel="stylesheet" href="css/min/intro.min.css">
+    <link rel="stylesheet" href="css/min/audio.min.css">
+    <link rel="stylesheet" href="css/min/layout.min.css">
+    <link rel="stylesheet" href="css/min/profile.min.css">
+    <link rel="stylesheet" href="css/min/purpose.min.css">
+    <link rel="stylesheet" href="css/min/gallery.min.css">
+    <link rel="stylesheet" href="css/min/lightbox.min.css">
+    <link rel="stylesheet" href="css/min/jurnal.min.css">
+    <script src="page-init.js"></script>
+</head>
+<body>
+
+    <!-- AUDIO & TOMBOL AUDIO DITAMBAHKAN DI SINI -->
+    <audio id="bg-music" preload="auto">
+        <source src="bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="audio-panel">
+        <button id="audio-toggle" class="audio-control" aria-label="Toggle Audio">
+            <span class="music-wave"></span>
+            <span id="audio-text">Audio: Off</span>
+        </button>
+        <select id="audio-select" class="audio-select" aria-label="Pilih Koleksi">
+            <option value="bg-music.mp3">Smooth Operator</option>
+            <option value="bg-music-2.mp3">Like A Tattoo</option>
+        </select>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>ALBUM DOKUMENTASI</h1>
+            <p>Galeri Foto & Video PKL Bintang Menggala</p>
+            
+            <nav class="header-nav" aria-label="Navigasi utama">
+                <a href="index.html" class="btn-nav">Halaman Utama</a>
+                <span class="nav-divider" aria-hidden="true"></span>
+                <a href="jurnal.html" class="btn-nav">Jurnal Harian</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="gallery-section">
+            <h2 class="section-title">Semua Koleksi Media</h2>
+
+            <div class="gallery-controls">
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Cari foto/video (misal: Metro, Canvasing)...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="Video Dokumentasi">Video Dokumentasi</button>
+                    <button class="filter-btn" data-filter="Infrastruktur">Infrastruktur</button>
+                    <button class="filter-btn" data-filter="Jaringan Lapangan">Jaringan Lapangan</button>
+                    <button class="filter-btn" data-filter="Kegiatan Lapangan">Kegiatan Lapangan</button>
+                </div>
+            </div>
+
+            <div class="gallery-grid" id="album-grid"></div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox-overlay">
+        <div class="lightbox-container">
+            <span id="lightbox-close" class="lightbox-close">&times;</span>
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Fullscreen Image">
+            <div class="lightbox-caption">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-progress">Progress masih berjalan hingga 24/12/2026</p>
+        <p>2026 Bintang Menggala - SMKN 7.</p>
+    </footer>
+
+    <script src="data-album.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
