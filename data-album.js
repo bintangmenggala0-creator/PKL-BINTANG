@@ -80,9 +80,9 @@ const albumData = [
     {
         type: "image",
         category: "Kegiatan Lapangan",
-        title: "Penganvasan Part 1",
-        desc: "Kegiatan penganvasan dan sosialisasi produk Icon plus.",
-        src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785399466/canvasing1_g6c6fq.jpg"
+        title: "Pembelajaran Mikrotik",
+        desc: "Pembelajaran Mikrotik dan Topologi Serta Set-Up Melalui GUI.",
+        src: "https://res.cloudinary.com/buklippb/image/upload/v1785989604/IMG20260806103242_zzsyyw.jpg"
     },
     {
         type: "image",
