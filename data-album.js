@@ -3,8 +3,8 @@ const albumData = [
     {
         type: "video",
         category: "Video Dokumentasi",
-        title: "Rekaman OLT Marga Pundu",
-        desc: "Dokumentasi video proses penanganan perangkat OLT di wilayah Marga Pundu.",
+        title: "Rekaman OLT Margapundu",
+        desc: "Dokumentasi video proses penanganan perangkat OLT di wilayah Margapundu.",
         src: "https://res.cloudinary.com/buklippb/video/upload/v1785398112/Olt_Marga_Pundu_m4j0b8.mp4"
     },
     {
@@ -87,22 +87,22 @@ const albumData = [
     {
         type: "image",
         category: "Kegiatan Lapangan",
-        title: "Pengavasan Part 2",
-        desc: "Kegiatan penganvasan di area yang memiliki ultilisasi rendah.",
+        title: "Canvassing I",
+        desc: "Kegiatan canvasing di area yang memiliki ultilisasi rendah.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785399467/canvasing2_ultyew.jpg"
     },
     {
         type: "image",
         category: "Kegiatan Lapangan",
-        title: "Penganvasan Part 3",
-        desc: "Salah satu lokasi FAT yang memiliki ultilisasi rendah dan menjadi salah satu titik pengavasan.",
+        title: "Canvassing II",
+        desc: "Salah satu lokasi FAT yang memiliki ultilisasi rendah dan menjadi salah satu titik canvassing.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785399468/canvasing3_y5h9iy.jpg"
     },
     {
         type: "image",
         category: "Kegiatan Lapangan",
-        title: "Penganvansan Part 4",
-        desc: "Penganvasan di wilayah antasari-kedamaian.",
+        title: "Canvassing III",
+        desc: "Canvassing di wilayah Kedamaian-Antasari.",
         src: "https://res.cloudinary.com/buklippb/image/upload/f_auto,q_auto/v1785399468/canvasing4_ckvoy9.jpg"
     }
 ];
