@@ -45,10 +45,6 @@
 .jurnal-card .card-tag{margin-bottom:0;font-size:0.7rem;opacity:0.85}
 .jurnal-date{font-size:0.7rem;letter-spacing:1.5px;color:var(--text-muted);text-transform:uppercase;font-weight:300}
 
-/* Huruf kapital turun ala kolom koran, untuk membuka tiap catatan */
-.jurnal-card .card-desc{max-width:600px;overflow:hidden}
-.jurnal-dropcap{float:left;font-family:'Cinzel',serif;font-weight:400;font-size:1.1rem;line-height:1.5;padding:1px 1px 0 0;color:var(--accent-gold)}
-
 /* Reveal bertahap saat discroll, mengikuti pola yang sama dengan blok Tujuan & Manfaat */
 .jurnal-card.jurnal-reveal{opacity:0;transform:translateY(16px);transition:opacity var(--dur-slow) var(--ease-luxury),transform var(--dur-slow) var(--ease-luxury)}
 .jurnal-card.jurnal-reveal.is-visible{opacity:1;transform:translateY(0)}
