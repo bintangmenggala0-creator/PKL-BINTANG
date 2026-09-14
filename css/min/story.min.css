@@ -1,0 +1,209 @@
+
+/* 1. Kunci Body, pindahkan scroll ke dalam Container */
+html, body.scrolly-body {
+    width: 100%;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    background-color: var(--bg-dark);
+}
+
+/* 2. Wadah Scroll Khusus (Snap Container yang Mulus) */
+#scrolly-app {
+    width: 100vw;
+    height: 100dvh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    contain: strict; 
+}
+
+#scrolly-app::-webkit-scrollbar {
+    display: none;
+}
+
+/* 3. Kartu Halaman Penuh */
+.story-card {
+    width: 100vw;
+    height: 100dvh; 
+    scroll-snap-align: start;
+    scroll-snap-stop: always; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6vw;
+    box-sizing: border-box;
+    position: relative;
+    background-image: radial-gradient(circle at 50% 0%, #261329 0%, var(--bg-dark) 70%);
+}
+
+/* 4. Wrapper Layout */
+.story-wrapper {
+    width: 100%;
+    max-width: 1080px;
+    display: flex;
+    align-items: center;
+    gap: 56px;
+}
+
+.story-single {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.align-center .story-content { text-align: center; margin: 0 auto; }
+.align-left .story-content { text-align: left; }
+
+/* 5. Animasi Ultra-Soft (Opacity 0 -> 100, Gerak 4px, Durasi 2.7s) */
+.story-media-frame,
+.story-title,
+.story-desc,
+.story-nav {
+    opacity: 0;
+    transform: translateY(4px);
+    will-change: transform, opacity;
+}
+
+.story-media-frame {
+    flex-shrink: 0;
+    width: clamp(260px, 26vw, 330px);
+    aspect-ratio: 3 / 4;
+    border: 1px solid var(--border-gold);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: 12px;
+    background: var(--bg-card);
+    transition: transform 2.7s var(--ease-luxury), opacity 2.7s var(--ease-luxury), border-color 2.7s var(--ease-luxury), box-shadow 2.7s var(--ease-luxury);
+}
+
+.story-media-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.02); 
+    transition: transform 3.5s var(--ease-luxury);
+}
+
+.story-card.is-active:hover .story-media-frame {
+    border-color: var(--accent-gold);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(230, 200, 165, 0.15);
+}
+
+.story-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    color: var(--accent-gold);
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    letter-spacing: 5px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+    line-height: 1.3;
+    transition: transform 2.7s var(--ease-luxury), opacity 2.7s var(--ease-luxury);
+}
+
+.story-desc {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 300;
+    color: var(--text-light);
+    font-size: clamp(0.92rem, 1.25vw, 1.08rem);
+    line-height: 1.85;
+    transition: transform 2.7s var(--ease-luxury), opacity 2.7s var(--ease-luxury);
+}
+
+.story-nav { 
+    margin-top: 42px; 
+    transition: transform 2.7s var(--ease-luxury), opacity 2.7s var(--ease-luxury);
+}
+
+/* =========================================================
+   INDIKATOR SCROLL PERSUASIF
+   ========================================================= */
+.scroll-indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 2.7s var(--ease-luxury), transform 2.7s var(--ease-luxury);
+    pointer-events: none; /* Agar tidak menghalangi klik */
+    z-index: 10;
+}
+
+.scroll-indicator-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.scroll-chevron {
+    width: 8px;
+    height: 8px;
+    border-right: 1px solid var(--accent-gold);
+    border-bottom: 1px solid var(--accent-gold);
+    transform: rotate(45deg);
+    animation: scrollBounce 2.5s infinite var(--ease-luxury);
+    opacity: 0.8;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(6px) rotate(45deg); }
+}
+
+/* =========================================================
+   STATE AKTIF (Saat Kartu Tepat Berada di Layar)
+   ========================================================= */
+.story-card.is-active .story-media-frame,
+.story-card.is-active .story-title,
+.story-card.is-active .story-desc,
+.story-card.is-active .story-nav {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* Khusus untuk indikator, pertahankan translateX(-50%) agar tetap center */
+.story-card.is-active .scroll-indicator {
+    opacity: 1; 
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Staggered Delay (Agar elemen muncul berurutan dan tenang) */
+.story-card.is-active .story-media-frame { transition-delay: 0.1s; }
+.story-card.is-active .story-media-frame img { transform: scale(1); }
+.story-card.is-active .story-title { transition-delay: 0.3s; }
+.story-card.is-active .story-desc { transition-delay: 0.5s; }
+.story-card.is-active .story-nav { transition-delay: 0.7s; }
+.story-card.is-active .scroll-indicator { transition-delay: 1.2s; opacity: 0.85; 
+
+}
+
+/* Staggered Delay (Agar elemen muncul berurutan dan tenang) */
+.story-card.is-active .story-media-frame { transition-delay: 0.1s; }
+.story-card.is-active .story-media-frame img { transform: scale(1); }
+.story-card.is-active .story-title { transition-delay: 0.3s; }
+.story-card.is-active .story-desc { transition-delay: 0.5s; }
+.story-card.is-active .story-nav { transition-delay: 0.7s; }
+.story-card.is-active .scroll-indicator { transition-delay: 1.2s; opacity: 0.85; }
+
+/* 7. Responsif Mobile */
+@media (max-width: 768px) {
+    .story-card { padding: 0 5vw; }
+    .story-wrapper { flex-direction: column; gap: 28px; text-align: center; }
+    .align-left .story-content { text-align: center; }
+    .story-media-frame { width: clamp(210px, 52vw, 270px); margin-left: 0; }
+    .story-title { letter-spacing: 3px; margin-bottom: 16px; }
+    .scroll-indicator { bottom: 25px; }
+}
