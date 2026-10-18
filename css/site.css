@@ -224,3 +224,23 @@ button:focus-visible {
     left: 8px;
     top: 8px;
 }
+
+@media (max-width: 768px) {
+    .header-bar {
+        display: grid;
+        grid-template-columns: 44px 1fr 44px;
+        align-items: center;
+        padding-inline: 12px;
+    }
+    .menu-toggle {
+        position: static;
+        transform: none;
+        justify-self: start;
+    }
+    .site-title {
+        font-size: 1.15rem;
+        letter-spacing: 0.04em;
+        justify-self: center;
+        white-space: nowrap;
+    }
+}
